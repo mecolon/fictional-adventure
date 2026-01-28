@@ -5,7 +5,7 @@ on: push
 jobs:
   hello-world-job:
 
-    run-on: unbuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: check out repository code
