@@ -19,7 +19,8 @@ jobs:
         run: npm install -g sfcc-ci
 
       - name: Show Variable
-        run: |
-          echo "environment variable: $APP_ID_GITHUB_PAGES"
         env:
-          APP_ID_GITHUB_PAGES: ${{ vars.APP_ID_GITHUB_PAGES }}
+          APP_ID_GITHUB_PAGES: ${{ env.APP_ID_GITHUB_PAGES }}
+        run: | 
+          echo "environment variable: ${{ env.APP_ID_GITHUB_PAGES }}"
+        
