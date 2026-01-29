@@ -1,0 +1,19 @@
+name: SFCC Code Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install sfcc-ci
+        run: npm install -g sfcc-ci
