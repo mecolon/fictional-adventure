@@ -40,7 +40,7 @@ jobs:
       
     environment:
       name: production
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }} # <-- Found here
     
     runs-on: ubuntu-latest
 
@@ -64,7 +64,7 @@ jobs:
         with: 
           path: './out'
       - name: deploy
-        id: deployment
+        id: deployment  # <-- Must match 'steps.<id>'
         uses: actions/deploy-pages@v4
 
         
