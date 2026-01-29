@@ -1,4 +1,4 @@
-name: SFCC Code Deployment
+name: SFCC Code Deployment-TEST
 
 on:
   push:
