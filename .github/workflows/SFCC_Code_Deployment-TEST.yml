@@ -18,4 +18,4 @@ jobs:
       - name: Install sfcc-ci
         run: npm install -g sfcc-ci
       
-      - run: echo $APP_ID_GITHUB_PAGES
+      - run: echo ${{ vars.APP_ID_GITHUB_PAGES }}
