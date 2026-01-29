@@ -20,6 +20,6 @@ jobs:
 
       - name: Show Variable
         run: |
-          echo "environment variable: $APP_ID_GITHUB_PAGES."
+          echo "environment variable: $APP_ID_GITHUB_PAGES"
         env:
           APP_ID_GITHUB_PAGES: ${{ vars.APP_ID_GITHUB_PAGES }}
