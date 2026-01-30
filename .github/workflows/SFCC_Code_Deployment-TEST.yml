@@ -25,6 +25,18 @@ jobs:
         run: echo "${{ secrets.BASE64_P12 }}" | base64 -d > ${{ vars.CERT_FILENAME }}
         
       - run: cat ${{ vars.CERT_FILENAME }}
+# -----------------------
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - run: echo "TEST DATA" >> mytestfile.txt 
-      - run: add mytestfile.txt
+      - name: Create or update file
+        uses: actions/add-commit@v6
+        with:
+          message: "Add file using actions/add-commit."
+          add: "new_file.txt"
+          commit: true
+          # Create a file on the fly
+          # syntax: file_content >> filename
+          # You can also use "create-a-file" action for this
+          # See documentation for more advanced usage
+          run: echo "Content for the new file." > new_file.txt
