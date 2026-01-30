@@ -20,7 +20,7 @@ jobs:
 
       - name: Show Variable
         env:
-          APP_ID_GITHUB_PAGES: ${{ env.APP_ID_GITHUB_PAGES }}
+          APP_ID_GITHUB_PAGES: ${{ secrets.GITHUB_TOKEN }}
         run: | 
           echo "environment variable: ${{ env.APP_ID_GITHUB_PAGES }}"
         
