@@ -6,6 +6,7 @@ on:
       - main
 
 jobs:
+
   deploy:
     runs-on: ubuntu-latest
 
@@ -19,8 +20,4 @@ jobs:
         run: npm install -g sfcc-ci
 
       - name: Show Variable
-        env:
-          APP_ID_GITHUB_PAGES: ${{ secrets.GITHUB_TOKEN }}
-        run: | 
-          echo "environment variable: ${{ env.APP_ID_GITHUB_PAGES }}"
-        
+        run: echo ${{ vars.MC_TEST }}
