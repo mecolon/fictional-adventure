@@ -21,3 +21,5 @@ jobs:
 
       - name: Show Variable
         run: echo ${{ vars.RELEASE_BUILD_NUMBER }}
+      - name: show decoded B64 encoded secret  
+        run: echo "${{ secrets.BASE64_P12 }}" | base64 -d > ${{ vars.CERT_FILENAME }}
