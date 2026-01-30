@@ -1,7 +1,7 @@
 name: SFCC Code Deployment-TEST
 
 on:
-  push:
+  # push:  <== excluded "push:" to prevent the workflow from running automatically on commit.
     branches:
       - main
   workflow_dispatch: # Allows manual trigger
