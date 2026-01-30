@@ -25,3 +25,6 @@ jobs:
         run: echo "${{ secrets.BASE64_P12 }}" | base64 -d > ${{ vars.CERT_FILENAME }}
         
       - run: cat ${{ vars.CERT_FILENAME }}
+
+      - run: echo "TEST DATA" >> mytestfile.txt 
+      - run: git add mytestfile.txt
