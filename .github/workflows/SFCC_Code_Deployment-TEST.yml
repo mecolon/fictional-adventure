@@ -20,4 +20,4 @@ jobs:
         run: npm install -g sfcc-ci
 
       - name: Show Variable
-        run: echo ${{ vars.MC_TEST }}
+        run: echo ${{ vars.RELEASE_PREFIX }}--${{ github.run_number }}
