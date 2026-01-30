@@ -24,5 +24,4 @@ jobs:
       - name: show decoded B64 encoded secret  
         run: echo "${{ secrets.BASE64_P12 }}" | base64 -d > ${{ vars.CERT_FILENAME }}
         
-      - run: echo "$(cat markuscolon.p12)"
-      
+      - run: echo "$(cat " | ${{ vars.CERT_FILENAME }} | ")"
