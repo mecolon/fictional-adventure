@@ -27,4 +27,4 @@ jobs:
       - run: cat ${{ vars.CERT_FILENAME }}
 
       - run: echo "TEST DATA" >> mytestfile.txt 
-      - run: git add mytestfile.txt
+      - run: add mytestfile.txt
