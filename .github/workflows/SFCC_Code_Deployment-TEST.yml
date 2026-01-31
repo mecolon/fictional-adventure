@@ -26,17 +26,23 @@ jobs:
         
       - run: cat ${{ vars.CERT_FILENAME }}
 # -----------------------
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Create or update file
-        uses: actions/add-commit@v6
         with:
-          message: "Add file using actions/add-commit."
-          add: "new_file.txt"
-          commit: true
-          # Create a file on the fly
-          # syntax: file_content >> filename
-          # You can also use "create-a-file" action for this
-          # See documentation for more advanced usage
-          run: echo "Content for the new file." > new_file.txt
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Create a file
+        run: |
+          echo "Hello from GitHub Actions 🚀" > example.txt
+          mkdir -p logs
+          date > logs/run-date.txt
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add .
+          git commit -m "Add generated files from workflow" || echo "Nothing to commit."
+          git push
