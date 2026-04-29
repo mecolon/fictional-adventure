@@ -18,6 +18,7 @@ jobs:
 
       - name: Install sfcc-ci
         run: npm install -g sfcc-ci
+             sfcc-ci --version
 
       - name: Show Variable
         run: echo ${{ vars.RELEASE_BUILD_NUMBER }}
